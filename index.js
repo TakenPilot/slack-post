@@ -30,12 +30,6 @@ stdin(function (text) {
 
     if (argv.call) {
       var call = _.deepGet(SlackPost.api, argv.call);
-      if (!call) {
-        return console.error("Missing call, i.e., slack-post auth.test");
-      }
-      if (!_.all(argv, call.requiredArgs)) {
-        return console.error("Missing required arguments " + JSON.stringify(call.requiredArgs));
-      }
 
       return slack.withCall(call, function (err, results) {
         if (err) {
