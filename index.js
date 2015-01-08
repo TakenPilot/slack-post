@@ -9,9 +9,23 @@ _.mixin(require('lodash-deep'));
 
 
 if (argv.help) {
+  var apiStr = "";
+
+  _.each(SlackPost.api, function (value, group) {
+    _.each(value, function (value, name) {
+      apiStr += "### " + group +  "." + name + ": " + value.description + "\n";
+      apiStr += "* arguments: " + value.args.join(', ') + "\n";
+      if (value.requiredArgs) {
+        apiStr += "* required: " + value.requiredArgs.join(', ') + "\n";
+      }
+      apiStr += "\n";
+    });
+    apiStr += "\n";
+  });
+
   console.log([
     "The following commands are available:",
-    util.inspect(SlackPost.api, true, 5)
+    apiStr
   ].join('\n'));
   return;
 }
