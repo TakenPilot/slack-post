@@ -1,6 +1,6 @@
 {
   "name": "slack-post",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Posts to Slack",
   "main": "lib/index.js",
   "bin": "bin/cli",
