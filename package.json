@@ -1,0 +1,22 @@
+{
+  "name": "slack-post",
+  "version": "0.0.0",
+  "description": "Posts to slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "slack",
+    "post"
+  ],
+  "author": "Dane Stuckel",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.6.2",
+    "lodash": "^2.4.1",
+    "lodash-deep": "^1.5.3",
+    "minimist": "^1.1.0",
+    "restler": "^3.2.2"
+  }
+}
